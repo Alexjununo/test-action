@@ -32,4 +32,5 @@ jobs:
 
       - name: Push Docker image to GHCR
         run: |
-          docker-compose -f docker-compose.yml push
+          docker tag ghcr.io/${{ github.repository }}/app:latest ghcr.io/alexjununo/test-action:latest  # Tag da imagem
+          docker push ghcr.io/alexjununo/test-action:latest  # Empurrando a imagem para o GHCR
