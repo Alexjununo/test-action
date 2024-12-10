@@ -1,0 +1,19 @@
+
+services:
+  server:
+    build: .
+    container_name: 'app'
+    ports:
+      - 3000:3000
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: sqd
+    ports:
+      - 5432:5432
