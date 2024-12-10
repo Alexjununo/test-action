@@ -7,6 +7,7 @@ services:
       - 3000:3000
     depends_on:
       - postgres
+    image: ghcr.io/alexjununo/test-action/app:latest
 
   postgres:
     image: postgres
